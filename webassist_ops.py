@@ -1,14 +1,23 @@
-from dotenv import find_dotenv, load_dotenv
-import agentops
+# Standard library imports
 import os
-from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain.agents import AgentExecutor, create_tool_calling_agent
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.messages import AIMessage, HumanMessage
-from langchain.load import dumps, loads
 
+# Third-party imports
+# Environment management
+from dotenv import find_dotenv, load_dotenv
+
+# AgentOps
+import agentops
+
+# Dash framework
 from dash import Dash, dcc, html, callback, Output, Input, State, no_update
+
+# LangChain imports
+from langchain.agents import AgentExecutor, create_tool_calling_agent
+from langchain.load import dumps, loads
+from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_core.messages import AIMessage, HumanMessage
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_openai import ChatOpenAI
 
 # Load environment variables
 dotenv_path = find_dotenv()
